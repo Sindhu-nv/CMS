@@ -1,0 +1,47 @@
+.maindiv{
+  background-color: white !important;
+  height: 100%;
+}
+.dropzone {
+    min-height: 300px;
+    min-width: 300px;
+    display: table;
+    width: 50%;
+    background-color: #eee;
+    border: dotted 1px #aaa;
+    margin: 0 auto;
+  }
+  
+  .text-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .centered {
+    font-family: sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align:center;
+  }
+  
+  .dropzone-list > ul {
+    width: 30%;
+    list-style: none;
+  }
+  
+  .dropzone-list > ul.valid > li:before {
+    content : '+';
+    color: #6def9a;
+  }
+  
+  .dropzone-list > ul.invalid > li:before {
+    content : '-';
+    color: #ef000f;
+  }
+  
+  .dropzone-list > ul > li {
+    border: 1px solid black;
+    padding-bottom: 5px;
+    padding-left: 10px;
+  }
+  

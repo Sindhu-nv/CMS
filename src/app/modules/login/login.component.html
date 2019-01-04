@@ -1,0 +1,40 @@
+<div class="common_bdr top"></div>
+<div class="container-fluid" *ngIf="islogin">
+    <div class="container">
+        <div class="common_table">
+            <div class="common_tablecell">
+                <div class="login_cntwraper">
+                    <div class="login_wraper pull-right">
+                        <p class="logo_header">Induction App CMS</p>
+                        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                            <div class="form-group" >
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                                <input type="text" class="form-control" name="username" [(ngModel)]="user.username" #username="ngModel" (ngModelChange)="userNameChange($event)" required autofocus />
+                                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                            </div>
+                            <div class="form-group" >
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                                <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel" (ngModelChange)="pwdChange($event)" required />
+                                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                            </div>
+                            <div class="form-group">
+                              <div class="forgot_pass"><a (click)="islogin=false; error=''">Forgot my login details</a></div>
+                          </div>
+                            <div class="form-group">
+                                <button [disabled]="loading" class="login_btn">Sign in</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="common_bdr bottom"></div>
